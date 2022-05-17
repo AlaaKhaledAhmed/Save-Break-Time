@@ -230,16 +230,16 @@ class _RequestMainState extends State<RequestMain> {
               if (cafeItem.length > 0) {
                 for (int i = 0; i < studentBookPrId.length; i++) {
                   productCollection
-                      .where("prID", isEqualTo: studentCafePrId[i])
+                      .where("prID", isEqualTo: studentcPrId[i])
                       .get()
                       .then((snapshot) {
                     for (DocumentSnapshot ds in snapshot.docs) {
-                      if (ds["prQuantity"] < studentCafeQuantity[i]) {
+                      if (ds["prQuantity"] < studentBookQuantity[i]) {
                         dialog(context, "request", "Quantity is not enough");
                       } else {
                         ds.reference.update({
                           "prQuantity":
-                              ds["prQuantity"] - studentCafeQuantity[i],
+                              ds["prQuantity"] - studentBookQuantity[i],
                         });
                       }
                     }

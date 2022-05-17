@@ -239,7 +239,7 @@ class _RequestMainState extends State<RequestMain> {
                       } else {
                         ds.reference.update({
                           "prQuantity":
-                              ds["prQuantity"] - studentCafeQuantity[i],
+                              ds["prQuantity"] - studentBookQuantity[i],
                         });
                       }
                     }

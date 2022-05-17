@@ -234,12 +234,12 @@ class _RequestMainState extends State<RequestMain> {
                       .get()
                       .then((snapshot) {
                     for (DocumentSnapshot ds in snapshot.docs) {
-                      if (ds["prQuantity"] < studentCafeQuantity[i]) {
+                      if (ds["prQuantity"] < studentCaQuantity[i]) {
                         dialog(context, "request", "Quantity is not enough");
                       } else {
                         ds.reference.update({
                           "prQuantity":
-                              ds["prQuantity"] - studentCafeQuantity[i],
+                              ds["prQuantity"] - studentBookQuantity[i],
                         });
                       }
                     }
